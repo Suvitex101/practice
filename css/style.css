@@ -1227,7 +1227,7 @@ select,
 
 	.container {
 		min-height: 100%;
-		width: 100%;
+		width: auto;
 	}
 
 	@keyframes showMenu {
