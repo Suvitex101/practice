@@ -217,6 +217,7 @@ form a {
 	margin-left: 10px;
 	min-height: 100vh;
 	padding-right: 80px;
+	overflow: auto;
 }
 
 
@@ -256,16 +257,22 @@ form a {
 	opacity: 50%;
 }
 
+.table-container {
+	width: 100%;
+	overflow-x: scroll;
+	border-radius: var(--card-border-radius);
+}
+
 .client-list {
 	background-color: var(--color-white);
 	width: 100%;
 	border-radius: var(--card-border-radius);
 	padding: var(--card-padding);
 	text-align: center;
-	box-shadow: var(--box-shadow);
+	/* box-shadow: var(--box-shadow); */
 	/* border-spacing: 10px 15px; */
+	white-space: nowrap;
 	transition: 300ms ease;
-	/* border-collapse: collapse; */
 }
 
 .client-list:hover {
@@ -276,6 +283,7 @@ form a {
 	height: 3rem;
 	border-bottom: 1.5px solid var(--color-light);
 	color: var(--color-dark-variant);
+	padding: 1rem;
 }
 
 .client-list tbody tr:last-child td {
@@ -407,6 +415,11 @@ select,
 	align-items: center;
 }
 
+.quote_btn button {
+	font-size: 12px;
+
+}
+
 .total input {
 	border: 1px solid var(--color-dark-variant);
 }
@@ -492,12 +505,16 @@ select,
 	margin-bottom: 50px;
 }
 
+.variable_btn {
+	margin-top: 25px;
+}
+
 /* Services */
 .card_container {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	width: 700px;
-	margin-left: 100px;
+	margin-left: 200px;
 	margin-top: -50px;
 }
 
@@ -531,6 +548,10 @@ select,
 	font-weight: 600;
 }
 
+.btn a {
+	color: var(--color-white);
+}
+
 /* Services Name */
 
 .Service_name {
@@ -550,6 +571,15 @@ select,
 
 .estimated p,
 .quote_price p {
+	font-weight: 600;
+}
+
+.estimated {
+	gap: 100px;
+}
+
+.estimated p,
+.quote_price p {
 	font-size: 14px;
 }
 
@@ -562,6 +592,10 @@ select,
 }
 
 /* create Servive Offerings */
+.create_service_form {
+	display: flex;
+	flex-direction: column;
+}
 
 .unit_cost {
 	display: flex;
@@ -608,8 +642,9 @@ select,
 	display: inline-block;
 	background: var(--color-white);
 	border-radius: var(--border-radius-1);
-	margin-top: 1rem;
+	/* margin-top: 1rem; */
 	padding: 0.5rem 1.6rem;
+	height: 35px;
 }
 
 .date_input input {
@@ -618,8 +653,37 @@ select,
 	border: none;
 }
 
+.project_management_menu {
+	display: flex;
+	width: auto;
+	align-items: flex-start;
+	justify-content: space-between;
+}
+
+
+.project_management_submenu ul li .drop_menu {
+	display: none;
+}
+
+.project_management_submenu ul li .drop_menu a {
+	color: var(--bg-color-black);
+	font-weight: 500;
+}
+
+.project_management_submenu ul li .drop_menu a:active {
+	color: var(--bg-primary);
+}
+
+
 .project_management_submenu {
 	display: flex;
+	align-items: center;
+}
+
+.status_dropdown {
+	display: flex;
+	gap: 5px;
+	cursor: pointer;
 }
 
 .progress {
@@ -807,6 +871,13 @@ select,
 	padding: var(--card-padding);
 	width: 350px;
 	gap: 20px;
+}
+
+.card_input_text {
+	height: 30px;
+	width: 280px;
+	border: none;
+	padding: 5px;
 }
 
 .inner_planning_card div {
@@ -1175,49 +1246,21 @@ select,
 	} */
 }
 
-/* @media screen and (max-width: 1200px) {
-	.logo h2 {
-		display: none;
-	}
-	.sidebar {
-		width: 120px;
-	}
-
-	.icon-link span {
-		font-size: 28px;
-	}
-	.nav h2,
-	.drop,
-	.sub-menu li {
-		display: none;
-	}
-
-	.sub-menu_active {
-		display: none;
-	}
-
-	.menu-link {
-		background: none;
-	}
-
-	.log-out {
-		flex-direction: column;
-	}
-
-	.main {
-		margin-left: 20px;
-	}
-
-	.client-list {
-		overflow-x: auto;
-		max-width: 100%;
-		-webkit-overflow-scrolling: touch;
-	}
-} */
+@media screen and (max-width: 1200px) {
+	
+}
 
 @media screen and (max-width: 768px) {
+
+	body {
+		width: 100%;
+	}
+
+	.container {
+		width: 100%;
+	}
 	.sidebar {
-		width: 320px;
+		width: 280px;
 		z-index: 3;
 		display: none;
 		left: -100%;
@@ -1270,5 +1313,207 @@ select,
 		right: 0;
 		margin-right: 20px;
 	}
+	.create_forms {
+		flex-direction: column;
+	}
 
+	.quote_btn button {
+		width: 120px;
+		height: 25px;
+	}
+
+	/* .quote_btn {
+		align-self: flex-start;
+	} */
+
+	.quotation_date {
+		margin-right: 20px;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.variable_type,
+	.variable_name {
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	.card_container {
+		grid-template-columns: 1fr;
+		margin-left: 80px;
+	}
+
+	.service_btn {
+		align-self: flex-start;
+		margin-bottom: 30px;
+	}
+
+	.service_btn button {
+		font-size: 14px;
+		width: 100px;
+	}
+
+	.name_of_service,
+	.total_cost2 {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.create_service {
+		flex-direction: column;
+	}
+	.unit_cost {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.variable_type_eng select {
+		width:280px;
+	}
+
+	.create_service_form {
+		align-items: center;
+	}
+
+	.create_service_form .btn {
+		justify-content: flex-start;
+	}
+
+	.project_management_menu {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.project_management_submenu {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 5px;
+	}
+	.project_management_menu .btn {
+		align-self: flex-start;
+		margin-top: 10px;
+	}
+	.project_management_menu .btn button {
+		font-size: 14px;
+		width: 150px;
+	}
+	.table-container {
+		overflow-x: scroll;
+	}
+
+	.list_of_payment_create {
+		margin-left: 10px;
+		gap: 1px;
+		padding-left: 10px;
+		width: auto;
+	}
+
+	.lable_input {
+		justify-content: flex-start;
+		gap: 5px;
+	}
+
+	.lable_input input {
+		width: auto;
+	}
+
+	.btn button {
+		font-size: 14px;
+		width: 150px;
+	}
+	.quotation_footer {
+		justify-content: flex-start;
+	}
+
+	.quotation_amount2 {
+		display: flex;
+		flex-direction: column;
+		margin-top: 19px;
+	}
+
+	.form_two {
+		width: auto;
+	}
+
+	.form_two input,
+	.first_form input,
+	.first_form select,
+	.form_two textarea,
+	.total input {
+		width: auto;
+	}
+	.form_two {
+		margin-right: 0;
+	}
+
+	.non_quote_form input,
+	.non_quote_form textarea {
+		width: auto;
+	}
+	.total_cost {
+		display: flex;
+		flex-direction: column;
+	}
+	.filter_btn {
+		align-self: flex-start;
+	}
+
+	.filter_btn {
+		margin-top: 20px;
+	}
+
+	.filter_btn .btn button {
+		font-size: 12px;
+		width: 80px;
+	}
+
+	.work_planning_card {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	.title_heading_1 {
+		height: auto;
+		gap: 10px;
+		align-self: flex-start;
+	}
+
+	.title_heading_1 a {
+		font-size: 12px;
+	}
+
+	.title_heading_1 a:hover {
+		font-size: 12px;
+	}
+
+	.title_heading_2 {
+		flex-direction: column;
+		align-self: flex-start;
+		gap: 5px;
+	}
+	.title_heading_2 a {
+		font-size: 11px;
+	}
+
+	.deviation_form {
+		gap: 10px;
+		flex-direction: column;
+	}
+
+	.deviation_form input {
+		width: auto;
+	}
+
+	.top_form {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.deviation_form {
+		padding: 30px;
+	}
+
+	.deviation_form .top_form {
+		gap: 10px;
+	}
 }
